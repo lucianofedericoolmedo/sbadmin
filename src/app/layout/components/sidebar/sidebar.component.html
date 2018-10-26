@@ -1,5 +1,9 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
-    <div class="list-group">
+    <div class="list-group" > 
+        <div class="list-group-item" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+            <i class="fa fa-bars"></i>
+        </div>
+
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
@@ -137,8 +141,10 @@
             </div>
         </div>
     </div>
+    <!--
     <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
         <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;
         <span>{{ 'Collapse Sidebar' | translate }}</span>
     </div>
+    -->
 </nav>
